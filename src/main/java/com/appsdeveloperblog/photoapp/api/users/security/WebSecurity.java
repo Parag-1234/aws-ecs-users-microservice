@@ -54,6 +54,7 @@ public class WebSecurity {
                 .requestMatchers(HttpMethod.POST, "/users/login").permitAll()
                 .requestMatchers("/users/ip").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
+.requestMatchers("/users/hello").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
 
                 .anyRequest().authenticated().and()
