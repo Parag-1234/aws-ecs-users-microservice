@@ -99,7 +99,7 @@ public String hello() {
         InetAddress inetAddress = InetAddress.getLocalHost();
         String ipAddress = inetAddress.getHostAddress();
 
-        return "Hello There! My IP address is: " + ipAddress;
+        return "Hello There! My Current IP address is: " + ipAddress;
     } catch (UnknownHostException ex) {
         return "Hello! Unable to determine IP address: " + ex.getMessage();
     }
