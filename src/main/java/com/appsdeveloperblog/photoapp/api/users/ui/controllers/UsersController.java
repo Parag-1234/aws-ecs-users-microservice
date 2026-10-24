@@ -64,7 +64,7 @@ public class UsersController {
 		UserDto createdUserDetails = usersService.createUser(userDto);
 
 		UserResponseModel returnValue = modelMapper.map(createdUserDetails, UserResponseModel.class);
-		log.info("User created with id: " + returnValue.getUserId());
+		log.info("New User created with id: " + returnValue.getUserId());
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(returnValue);
 	}
