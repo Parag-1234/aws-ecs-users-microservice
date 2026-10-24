@@ -93,6 +93,17 @@ public class UsersController {
 
 		return ResponseEntity.status(HttpStatus.OK).body(returnValue);
 	}
+	@GetMapping("/hello")
+public String hello() {
+    try {
+        InetAddress inetAddress = InetAddress.getLocalHost();
+        String ipAddress = inetAddress.getHostAddress();
+
+        return "Hello! My IP address is: " + ipAddress;
+    } catch (UnknownHostException ex) {
+        return "Hello! Unable to determine IP address: " + ex.getMessage();
+    }
+}
 
 	@GetMapping()
 	public ResponseEntity<List<UserResponseModel>> getUsers(@RequestHeader("Authorization") String authorization) {
